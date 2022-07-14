@@ -7,7 +7,12 @@ const HttpError = require("./utils/httpError");
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:5050"],
+  })
+);
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
